@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ug6byiegg-nodejs-gitops
+  description: This is GitOps manifest for ug6byiegg-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: ug6byiegg-nodejs
+    janus-idp.io/tekton: ug6byiegg-nodejs
+    backstage.io/kubernetes-id: ug6byiegg-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ug6byiegg-nodejs
